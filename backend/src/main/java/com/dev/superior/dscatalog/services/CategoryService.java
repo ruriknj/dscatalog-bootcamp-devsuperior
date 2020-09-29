@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.dev.superior.dscatalog.entities.Category;
 import com.dev.superior.dscatalog.repositories.CategoryRepository;
@@ -13,7 +14,8 @@ public class CategoryService {
 	
 	@Autowired
 	private CategoryRepository repository;
-
+	
+	@Transactional(readOnly = true) // usa-se para o metodo de somente leitura ->( readOnly = true)
 	public List<Category> findAll() {
 		
 		return repository.findAll();
