@@ -1,0 +1,8 @@
+$theme-colors: (
+    "primary": #407bff
+);
+
+$body-bg: #e5e5e5;   //custom do bootstarp ver em doc theming bootstrap
+$body-color: #263238;
+
+@import '~bootstrap/scss/bootstrap.scss';

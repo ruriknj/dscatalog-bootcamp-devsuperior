@@ -1,4 +1,6 @@
 import React from "react";
+import './core/assets/styles/custom.scss'
+import './app.scss'
 
 // useState -> ver documentação React do Hooks
 
