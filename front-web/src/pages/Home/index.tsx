@@ -1,5 +1,7 @@
 import React from 'react';
 import { ReactComponent as MainImage } from '../../core/assets/images/main-image.svg';
+import Buttonicon from '../../core/components/Buttonicon';
+import {Link} from 'react-router-dom';
 import './styles.scss'
 
 const Home = () => (
@@ -11,12 +13,14 @@ const Home = () => (
                     Ajudaremos você a encontrar os melhores 
                      produtos <br/> disponíveis no mercado.
                 </p>
+                <Link to="/catalog">
+                <Buttonicon text="inicie agora a sua busca"/>
+                </Link>
             </div>
-            <div className="col-6">
+            <div className="col-6" >
                 <MainImage className="main-image" />
             </div>
         </div>
     </div>
-
 );
 export default Home;
