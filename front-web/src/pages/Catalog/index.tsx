@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { makeRequest } from '../../core/utils/request';
 import ProductCard from './components/productCard';
 import './styles.scss';
 
@@ -11,9 +12,19 @@ const Catalog = () => {
  */
 
     useEffect(() => {
-        fetch('http://localhost:3000/products')
-            .then(Response => Response.json() )
-            .then(Response => console.log(Response) )
+        const params = {
+            page:0,
+            linesPerPage: 12
+        }
+
+        /*  limitações do fetch:
+            muito verboso,
+            não tem suporte nativo para ler o progresso de upload de arquivos
+            não tem suporte nativo para enviar queries strings
+            MELHOR OPÇÃO: axios
+         */
+        makeRequest({url: '/products', params})
+            .then(Response => console.log(Response) );
     }, []);
 
     return (
