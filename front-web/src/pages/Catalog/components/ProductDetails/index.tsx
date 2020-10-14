@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, useParams } from 'react-router-dom'
 import { ReactComponent as ArrowIcon } from '../../../../core/assets/images/arrow.svg';
 import { ReactComponent as ProductImage } from '../../../../core/assets/images/product.svg';
+import ProductPrice from '../ProductPrice';
 import './style.scss';
 
 type ParamsType = {
@@ -26,6 +27,7 @@ const ProductDetails = () => {
                                 <h1 className="product-details-name">
                                     Computador Desktop - Intel Core i7
                                 </h1>
+                                < ProductPrice price = "2.779,00" />
                             </div>
                         </div>
                     </div>
@@ -33,8 +35,8 @@ const ProductDetails = () => {
                         <h1 className="product-description-title">
                             Descrição do produto
                         </h1>
-                         <p className="product-description-text">
-                         Seja um mestre em multitarefas com a capacidade para exibir quatro aplicativos simultâneos na tela. A tela está ficando abarrotada? Crie áreas de trabalho virtuais para obter mais espaço e trabalhar com os itens que você deseja. Além disso, todas as notificações e principais configurações são reunidas em uma única tela de fácil acesso.
+                        <p className="product-description-text">
+                            Seja um mestre em multitarefas com a capacidade para exibir quatro aplicativos simultâneos na tela. A tela está ficando abarrotada? Crie áreas de trabalho virtuais para obter mais espaço e trabalhar com os itens que você deseja. Além disso, todas as notificações e principais configurações são reunidas em uma única tela de fácil acesso.
                         </p>
                     </div>
                 </div>
