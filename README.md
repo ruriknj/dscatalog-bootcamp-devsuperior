@@ -1,2 +1,2 @@
-# https://raw.githubusercontent.com/adam-golab/react-developer-roadmap/master/roadmap.png
+# roadmap[1].png
 # dscatalog-bootcamp-devsuperior
