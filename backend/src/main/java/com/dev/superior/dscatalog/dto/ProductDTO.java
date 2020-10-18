@@ -16,7 +16,7 @@ public class ProductDTO implements Serializable {
 	private String name;
 	private String description;
 	private Double price;
-	private String imhUrl;
+	private String imgUrl;
 	private Instant date;
 
 	private List<CategoryDTO> categories = new ArrayList<>();
@@ -25,12 +25,12 @@ public class ProductDTO implements Serializable {
 
 	}
 
-	public ProductDTO(Long id, String name, String description, Double price, String imhUrl, Instant date) {
+	public ProductDTO(Long id, String name, String description, Double price, String imgUrl, Instant date) {
 		this.id = id;
 		this.name = name;
 		this.description = description;
 		this.price = price;
-		this.imhUrl = imhUrl;
+		this.imgUrl = imgUrl;
 		this.date = date;
 	}
 
@@ -39,7 +39,7 @@ public class ProductDTO implements Serializable {
 		this.name = entity.getName();
 		this.description = entity.getDescription();
 		this.price = entity.getPrice();
-		this.imhUrl = entity.getImgUrl();
+		this.imgUrl = entity.getImgUrl();
 		this.date = entity.getDate();
 	}
 
@@ -82,12 +82,12 @@ public class ProductDTO implements Serializable {
 		this.price = price;
 	}
 
-	public String getImhUrl() {
-		return imhUrl;
+	public String getImgUrl() {
+		return imgUrl;
 	}
 
-	public void setImhUrl(String imhUrl) {
-		this.imhUrl = imhUrl;
+	public void setImgUrl(String imgUrl) {
+		this.imgUrl = imgUrl;
 	}
 
 	public Instant getDate() {
