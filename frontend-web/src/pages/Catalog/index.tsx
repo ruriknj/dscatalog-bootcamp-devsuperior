@@ -15,14 +15,15 @@ const Catalog = () => {
      */
 
     const [productsResponse, setProductsResponse] = useState<ProductsResponse>();
-
     const [isloading, setIsLoading] = useState(false);
+    const [activePage, setActivePage] = useState(0);
+
 
     // console.log(productsResponse);
 
     useEffect(() => {
         const params = {
-            page: 0,
+            page: activePage,
             linesPerPage: 12
         }
         // iniciar o loader
@@ -39,7 +40,7 @@ const Catalog = () => {
                 //finalizar o loader
                 setIsLoading(false);
             })
-    }, []);
+    }, [activePage]);
 
     return (
         <div className="catalog-container">
@@ -48,14 +49,20 @@ const Catalog = () => {
         </h1>
             <div className="catalog-products">
                 {isloading ? <ProductCardLoader /> : (
-                productsResponse?.content.map(product => (
-                    <Link to={`/products/${product.id}`} key={product.id}>
-                    <ProductCard product={product} />
-                </Link>
-                ))
+                    productsResponse?.content.map(product => (
+                        <Link to={`/products/${product.id}`} key={product.id}>
+                            <ProductCard product={product} />
+                        </Link>
+                    ))
                 )}
             </div>
-            <Pagination />
+            {productsResponse && (
+                < Pagination
+                    totalPages={productsResponse.totalPages}
+                    activePage={activePage}
+                    onChange={page => setActivePage(page) }
+                />
+            )}
         </div>
     )
 };
